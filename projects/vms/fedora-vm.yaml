@@ -75,7 +75,7 @@ spec:
               #cloud-config
               user: fedora
               password: gitops-vm
-              chpasswd: { expire: true }
+              chpasswd: { expire: false }
               ssh_pwauth: true
               runcmd:
                 - dnf install -y nginx
