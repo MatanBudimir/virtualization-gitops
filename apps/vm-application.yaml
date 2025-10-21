@@ -11,7 +11,7 @@ spec:
       repoURL: https://github.com/MatanBudimir/virtualization-gitops.git
       revision: HEAD
       files:
-      - path: projects/**/
+      - path: projects/*
       requeueAfterSeconds: 30
   template:
     metadata:
