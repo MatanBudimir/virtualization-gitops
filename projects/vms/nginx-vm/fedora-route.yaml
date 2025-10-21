@@ -9,10 +9,8 @@ spec:
     name: nginx-vm-svc
     weight: 100
     kind: Service
-  host: ''
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
   port:
     targetPort: http
-  alternateBackends: []
