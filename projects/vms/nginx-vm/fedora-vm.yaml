@@ -2,16 +2,16 @@ apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
   labels:
-    app: fedora-gitops-vm
+    app: nginx-vm
     kubevirt.io/dynamic-credentials-support: 'true'
-  name: fedora-gitops-vm
+  name: nginx-vm
   namespace: vm-gitops
 spec:
   dataVolumeTemplates:
     - apiVersion: cdi.kubevirt.io/v1beta1
       kind: DataVolume
       metadata:
-        name: fedora-gitops-vm
+        name: nginx-vm
       spec:
         source:
           pvc:
@@ -29,7 +29,7 @@ spec:
         vm.kubevirt.io/os: fedora
         vm.kubevirt.io/workload: server
       labels:
-        kubevirt.io/domain: fedora-gitops-vm
+        kubevirt.io/domain: nginx-vm
         kubevirt.io/size: medium
     spec:
       architecture: amd64
@@ -68,7 +68,7 @@ spec:
       terminationGracePeriodSeconds: 180
       volumes:
         - dataVolume:
-            name: fedora-gitops-vm
+            name: nginx-vm
           name: rootdisk
         - cloudInitNoCloud:
             userData: |-

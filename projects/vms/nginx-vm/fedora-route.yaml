@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: nginx-vm
+  namespace: vm-gitops
+spec:
+  path: /
+  to:
+    name: nginx-vm-svc
+    weight: 100
+    kind: Service
+  host: ''
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  port:
+    targetPort: http
+  alternateBackends: []
