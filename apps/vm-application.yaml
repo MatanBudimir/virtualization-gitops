@@ -3,6 +3,8 @@ kind: ApplicationSet
 metadata:
   name: vm-application-set
   namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   #goTemplate: true
   #goTemplateOptions: ["missingkey=error"]
@@ -11,7 +13,7 @@ spec:
       repoURL: https://github.com/MatanBudimir/virtualization-gitops.git
       revision: HEAD
       directories:
-      - path: projects/*
+      - path: projects/vms/*
       requeueAfterSeconds: 30
   template:
     metadata:

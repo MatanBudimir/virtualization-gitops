@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vm-administration
+  name: vm-data-volumes
   namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/MatanBudimir/virtualization-gitops.git
     targetRevision: HEAD
-    path: administration/vms
+    path: project/data-volumes
   destination:
     server: https://kubernetes.default.svc
     namespace: vm-gitops
