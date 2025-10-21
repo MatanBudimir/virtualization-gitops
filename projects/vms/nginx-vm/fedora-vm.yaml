@@ -47,7 +47,9 @@ spec:
                 bus: virtio
               name: cloudinitdisk
           interfaces:
-            - model: virtio
+            - macAddress: '02:95:df:00:00:0e'
+              masquerade: {}
+              model: virtio
               name: default
         features:
           smm:
