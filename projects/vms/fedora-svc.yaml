@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: fedora-gitops-vm
+  name: fedora-gitops-vm-svc
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    vm.kubevirt.io/name: fedora-gitops-vm
+  type: ClusterIP
