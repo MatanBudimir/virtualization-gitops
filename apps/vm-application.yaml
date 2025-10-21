@@ -10,7 +10,7 @@ spec:
   - git:
       repoURL: https://github.com/MatanBudimir/virtualization-gitops.git
       revision: HEAD
-      files:
+      directories:
       - path: projects/*
       requeueAfterSeconds: 30
   template:
