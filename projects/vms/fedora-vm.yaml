@@ -77,4 +77,8 @@ spec:
               password: gitops-vm
               chpasswd: { expire: true }
               ssh_pwauth: true
+              runcmd:
+                - dnf install -y nginx
+                - systemctl enable nginx
+                - systemctl start nginx
           name: cloudinitdisk
