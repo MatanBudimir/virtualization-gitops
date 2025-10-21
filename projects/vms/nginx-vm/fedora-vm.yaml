@@ -46,6 +46,9 @@ spec:
             - disk:
                 bus: virtio
               name: cloudinitdisk
+          interfaces:
+            - model: virtio
+              name: default
         features:
           smm:
             enabled: true
